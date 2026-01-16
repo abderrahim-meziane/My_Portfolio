@@ -1,0 +1,442 @@
+html, body {
+    overflow-x: hidden; /* Coupe tout ce qui dépasse sur les côtés */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Fond noir par défaut */
+    font-family: system-ui, "Segoe UI", "Helvetica Neue", Arial, sans-serif;  
+    /* LA PILE DE POLICES (Font Stack) :
+       1. system-ui : Utilise la police native du téléphone/PC (Rapide & Moderne)
+       2. Segoe UI : Windows (C'est celle qu'on voit sur votre image "Projets")
+       3. Helvetica Neue : Mac anciens
+       4. Arial : Roue de secours universelle
+       5. sans-serif : N'importe quelle police "bâton" si rien d'autre ne marche */
+}
+
+nav {
+    background-color: #000000;
+}
+
+/* --- FIX MENU MOBILE (Overlay) --- */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: absolute; /* Le détache du flux normal */
+        top: 100%;          /* Le place juste en dessous de la barre noire */
+        right: 0;      /* place la toute à droite */
+        width: 250px; /* Largeur fixe confortable pour lire le texte */
+        background-color: #000000; /* Fond noir obligatoire car il flotte */
+        z-index: 9999;      /* Passe au-dessus de tout */
+        padding-bottom: 20px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.5); /* Ombre pour détacher le menu */
+    }
+}
+
+/* =========================================
+   SECTION ACCUEIL (HERO)
+   ========================================= */
+.profile-photo {
+  width: 100%;
+  max-width: 250px;   /* limite la taille maximum */
+  height: auto;       /* évite les déformations */
+  aspect-ratio: 1/1;  /* assure un carré parfait */
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+/* Animation curseur "Machine à écrire" */
+/* On cible un "pseudo-élément" qui se crée automatiquement APRES (::after) le texte */
+.curseur-actif::after {
+    content: '|';                       /* Affiche le caractère barre verticale */
+    animation: clignote 0.7s infinite;  /* Lance l'animation 'clignote', dure 0.7s, en boucle (infinite) */
+    font-weight: 100;                   /* Rend la barre très fine (épaisseur de police minimale) */
+    margin-left: 2px;                   /* Ajoute un petit espace à gauche pour ne pas coller au texte */
+}
+
+/* Définition de la chorégraphie de l'animation */
+@keyframes clignote {
+    0%, 100% { opacity: 1; }  /* Au début et à la fin : le curseur est visible (Opacité 100%) */
+    50% { opacity: 0; }       /* Au milieu de l'animation : le curseur est invisible (Opacité 0%) */
+}
+
+/* Icônes réseaux sociaux */
+.social-icons a {
+    color: white;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+#cv-button {
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+.social-icons a:hover, #cv-button:hover {
+    color: #ccc;
+    border-color: white;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /*changer la couleur des icons parceque à la base ils sont noirs  inverser   noir--->blanc */
+}
+
+/* =========================================
+   SECTION PROJETS (CARTES)
+   ========================================= */
+.img-projet {
+  height: 100px;
+}
+
+/* Style de la carte */
+.dark-card {
+    background-color: #2c2c2c; /* Gris foncé */
+    border-radius: 15px;       
+    overflow: hidden;          
+    height: 100%;              
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.dark-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 16/9;   
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Ce bloc ne modifie QUE l'automate grâce à la classe spécifique */
+#projet .dark-card .img-auto-specifique {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;       /* Garde l'automate entier pour la clarté */
+    padding: 20px;             /* Agrandit les marges pour un affichage clair */
+    background-color: #ffffff11; /* Fond gris identique à votre photo auto.png */
+    display: block;
+}
+
+/* On s'assure que le conteneur de cette image n'a pas de padding gênant */
+#projet .dark-card .card-image:has(.img-auto-specifique) {
+    padding: 0; 
+    background-color: #d1d1d1; /* Fusionne le fond du cadre avec l'image */
+}
+.card-content {
+    padding: 20px;
+    text-align: center;
+    color: white;         
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #cccccc;       
+    margin-bottom: 0;
+}
+
+/* =========================================
+   SECTION SKILLS (COMPÉTENCES)
+   ========================================= */
+.skills-section {
+    padding: 60px 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* =========================================
+   FIX GRID COMPETENCES (RESPONSIVE)
+   ========================================= */
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 10px;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+/* --- MOBILE (Défaut) : 2 par ligne --- */
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    
+    flex-grow: 0;   
+    flex-shrink: 0; 
+    width: 44%;    
+}
+
+/* --- TABLETTE : 3 par ligne --- */
+@media (min-width: 768px) {
+    .skill-card {
+        width: 29%; 
+    }
+}
+
+/* --- PC (Grille Principale) : 5 par ligne --- */
+@media (min-width: 992px) {
+    .skill-card {
+        width: 17.5%; 
+    }
+}
+
+
+/* Mobile : 2 par ligne  */
+
+/* Tablette ET PC : 3 par ligne */
+@media (min-width: 768px) {
+    .learning-grid .skill-card {
+        /* On force 3 par ligne même sur grand écran */
+        width: 29% !important;
+    }
+}
+
+/* en aprentssage*/
+/* 2  par ligne */
+.learning-grid .skill-card {
+    width: 44% ; 
+    flex-grow: 0;
+}
+
+/* TABLETTE ET PC */
+/* 3  par ligne */
+@media (min-width: 768px) {
+    .learning-grid .skill-card {
+        width: 30% !important;
+    }
+}
+.skill-card:hover {
+    transform: translateY(-5px); 
+    background: rgba(128, 128, 128, 0.05); 
+}
+
+.skill-card i {
+    font-size: 4rem; 
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.custom-icon {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   SECTION À PROPOS
+   ========================================= */
+.formation-link {
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    color: white;           
+    text-decoration: none;  
+}
+
+
+.formation-link:hover {
+    color: #0dcaf0; 
+    text-decoration: underline; 
+}
+
+.formation-link:hover i {
+    transform: translate(3px, -3px); 
+    color: #0dcaf0;
+}
+
+.formation-link i {
+    transition: transform 0.3s ease;
+}
+
+/* =========================================
+   SECTION CONTACT 
+   ========================================= */
+
+/* Champs par défaut */
+#contact .form-control {
+    background-color: #6c7d8e;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+/* Placeholder */
+#contact .form-control::placeholder {
+    color: #e6e6e6; 
+    opacity: 1;
+}
+
+/* État Focus (Clic dans le champ) */
+#contact .form-control:focus {
+    background-color: #304e7a; /* Bleu foncé */
+    border-color: #ffcd00;     /* Jaune */
+    color: #ffffff;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Bouton Envoyer */
+#contact #sendmsg {
+    background-color: #6c7d8e;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#contact #sendmsg:hover {
+    background-color: #304e7a;
+}
+
+/* Messages d'état (Succès/Erreur) */
+.msg-ok {
+    text-align: center;     
+    font-size: 1.5rem;      
+    font-weight: bold;      
+    padding: 10px;          
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+  background-color: #000;      
+  min-height: 250px;           
+  text-align: center;
+  display: flex;
+  align-items: center;         
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;      
+  align-items: center;         
+  text-align: center;          
+  gap: 0.5rem;                 
+}
+
+.site-footer .footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+#droit {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-footer .footer-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-icon {
+  width: 64px;
+  height: auto;
+  display: block;
+}
+
+.footer-logo-middle {
+  width: 80px;   
+  height: auto;
+}
+
+footer .social-icons a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    display: inline-block;
+    padding: 5px 5px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+#sic a {
+    color: rgb(105, 31, 31); /* Couleur bordeaux spécifique demandée */
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    display: inline-block;
+    padding: 5px 5px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+#sic a:hover {
+    color: #ccc;
+    border-color: white;
+}
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;         
+    align-items: center;   
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(20px);
+}
+
+/* bouton visible quand on scrolle */
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/*pour mobile */
+@media (max-width: 768px) {
+    #scrollTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}

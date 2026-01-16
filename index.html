@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Abderrahim MEZIANE's porfolio</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"> <!--lien vers (Les logos de code)-->
+        <link rel="stylesheet" href="styles/styles.css">
+    
+    </head>
+    <body>
+        <header>
+            <nav id="navigation" class="navbar navbar-expand-lg navbar-dark ">
+                <div class="container">
+
+                    <a  href="#navigation"><img src="images/logo.svg" class="img-fluid" style="width:120px;"></a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#monMenu" aria-controls="monMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse p-4" id="monMenu">
+                    
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4 align-items-center">
+                            
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#accueil">Accueil</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="#projet">Mes Projets</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#skills">Competences</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="#a_propos">À Propos</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+           <section id="accueil" class="bg-dark text-white hero-section pb-5 px-0 mx-auto">
+    
+                <div class="container-fluid px-3 px-md-5">        
+                    <div class="row align-items-center gx-3 gx-lg-5 gy-3 mt-0">
+                        
+                        <div class="col-12 col-sm-4 col-lg-5 d-flex justify-content-center">
+                            <img src="images/my_picture.jpg"
+                                alt="Abderrahim Meziane"
+                                class="profile-photo img-fluid"
+                                style="max-width: 250px;">
+                        </div>
+
+                        <div id="conteneur-text" class="col-12 col-sm-8 col-lg-7 d-flex flex-column text-center text-sm-start">
+
+                            <div id="zone-texte-anime" class="position-relative">
+                                <div class="invisible-phantom" style="visibility: hidden;">
+                                    <h1 class="display-4 fw-bold">Bonjour, je suis<br>Abderrahim<br>MEZIANE</h1>
+                                    <p>Etudiant en Licence d'informatique<br>à Sorbonne Université.</p>
+                                </div>
+
+                                <div class="animated-text position-absolute top-0 start-0 w-100">
+                                    <h1 id="texteAnime" class="display-4 fw-bold text-white"></h1> <p id="paragrapheAnime"></p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center justify-content-sm-start gap-3 social-icons mt-3">
+                                <a href="https://www.linkedin.com/in/abderrahim-meziane-2086a6335/" target="_blank">
+                                    <img src="images/linkedin.svg" alt="LinkedIn">
+                                </a>
+                                <a href="https://github.com/abderrahim-meziane" target="_blank">
+                                    <img src="images/github.svg" alt="GitHub">
+                                </a>
+                                <a href="mailto:abderrahim.meziane@etu.sorbonne-universite.fr">
+                                    <img src="images/mail.svg" alt="Email">
+                                </a>
+                            </div>
+
+                            <div class="d-flex justify-content-center justify-content-sm-start mt-3">
+                                <a href="CV-Abderrahim_MEZIANE.pdf" download style="text-decoration: none;" target="_blank">
+                                    <button class="bg-dark px-2 py-2 border-2 text-white fw-bold" id="cv-button">Telecharger mon CV</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="projet" class="bg-dark text-white Projets-grid pt-0 pb-5 mx-0">
+                <div class="container">
+                    <h1 class="text-center mb-5" style="color: #fff;">Projets</h1>
+
+                    <div class="row g-4 justify-content-center mx-md-3">
+
+                        <!-- Projet BlackJack -->
+                        <div class="col-12 mx-auto col-md-8 col-lg-4 mb-4">
+                            <article class="dark-card">
+                                <div class="card-image">
+                                    <img src="images/Jeu_BlackJack.jpeg" class="img-fluid" alt="Projet BlackJack">
+                                </div>
+                                <div class="card-content">
+                                    <h3>BlackJack</h3>
+                                    <p>Une application web interactive reproduisant le célèbre jeu de casino.</p>
+                                    <a href="https://github.com/abderrahim-meziane/Jeu-de-BlackJack.git" target="_blank" class="btn btn-outline-light mt-3" >
+                                        Voir détails
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Projet Compteur Métro -->
+                        <div class="col-12 mx-auto col-md-8 col-lg-4 mb-4">
+                            <article class="dark-card">
+                                <div class="card-image">
+                                    <img src="images/compteur-de-passagers.jpeg" class="img-fluid" alt="Projet Compteur Métro">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Compteur Métro</h3>
+                                    <p>Compteur Métro est un projet qui permet de compter les passagers qui rentrent ou sortent dans une station.</p>
+                                    <a href="https://github.com/abderrahim-meziane/Compteur_des_passagers_metro.git" target="_blank" class="btn btn-outline-light mt-3" >
+                                        Voir détails
+                                    </a>
+                                </div>
+                            </article>
+                        </div>                        
+                        <!-- Projet Automates -->
+                        <div class="col-12 mx-auto col-md-8 col-lg-4 mb-4">
+                            <article class="dark-card">
+                                <div class="card-image">
+                                    <img src="images/Automate.png" class="img-fluid img-auto-specifique" alt="Théorie des Automates">                                </div>
+                                <div class="card-content">
+                                    <h3>Projet Automates</h3>
+                                    <p>Projet Automates Finis (Python) Conception d'une bibliothèque logicielle pour la modélisation et la transformation d'automates (déterminisation, opérations rationnelles)</p>
+                                    <a href="https://github.com/abderrahim-meziane/Projet_Automates" target="_blank" class="btn btn-outline-light mt-3">Voir détails</a>
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section id="skills" class="skills-section bg-dark text-white pt-0">
+                <div class="container">
+                    <h2 class="section-title">Compétences</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="devicon-html5-plain colored"></i>
+                            <p>HTML</p>
+                            <span>Structure des pages web</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="devicon-css3-plain colored"></i>
+                            <p>CSS</p>
+                            <span>Mise en forme et design responsive</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="devicon-javascript-plain colored"></i>
+                            <p>JavaScript</p>
+                            <span>Interactions et logique front-end</span>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <i class="devicon-bootstrap-plain colored"></i>
+                            <p>Bootstrap</p>
+                            <span>Framework CSS pour créer des interfaces web responsives.</span>
+                        </div>
+
+                        
+
+                        <div class="skill-card">
+                            <i class="devicon-python-plain colored"></i>
+                            <p>Python</p>
+                            <span>Scripts, automation & analyses</span>
+                        </div>
+
+                        
+
+                        <div class="skill-card">
+                            <i class="devicon-c-plain colored"></i>
+                            <p>C</p>
+                            <span>Programmation bas niveau</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="images/bash.svg" alt="bash" width="80">
+                            <p>Bash</p>
+                            <span>Scripting Shell & automatisation de tâches sous Linux.</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="images/mips.svg" alt="mips" width="80">
+                            <p>Assembleur MIPS</p>
+                            <span>Programmation bas niveau pour comprendre les instructions CPU et le fonctionnement matériel</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-git-plain colored"></i>
+                            <p>Git</p>
+                            <span>Gestion de versions & collaboration</span>
+                        </div>
+                        
+                    </div>
+
+                    <h3 class="section-title">en cours d’apprentissage</h3>
+
+                    <div class="skills-grid learning-grid">
+                        <div class="skill-card">
+                            <i class="devicon-react-original colored"></i>
+                            <p>React Js</p>
+                            <span>Interfaces dynamiques basées sur composants</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="devicon-java-plain colored"></i>
+                            <p>Java</p>
+                            <span>Programmation orientée objets</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-mysql-plain colored"></i>
+                            <p>MySQL</p>
+                            <span>Requêtes & gestion des bases de données</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="devicon-nodejs-plain colored"></i>
+                            <p>Node js</p>
+                            <span>Exécution de JavaScript côté serveur pour le développement d'applications back-end performantes.</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-docker-plain colored"></i>
+                            <p>Docker</p>
+                            <span>Outil de création de conteneurs virtuels pour faciliter le déploiement et la portabilité des applications.</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="images/API.svg" alt="mips" width="80">
+                            <p>API</p>
+                            <span>Solutions permettant l'interaction et l'échange de données entre différents logiciels ou services.</span>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </section>
+            <section id="a_propos" class="text-white bg-dark pb-5">
+                <div class="container">
+                    
+                    <div class="row justify-content-center mb-1">
+                        <div class="col-12 text-center">
+                            <h2 class="fw-bold section-title">À propos de moi</h2>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-12 col-md-10 text-center">
+                            <p class="text-white-70 fs-5">
+                            Étudiant en 2ème année de Licence d'Informatique en apprentissage à Sorbonne Université,
+                            je suis passionné par le développement.
+                            J'aime explorer de nouveaux domaines et transformer des lignes de code en solutions
+                            concrètes avec rigueur et curiosité.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 justify-content-center mx-md-3">
+                        <div class="col-12 mx-auto col-md-8 col-lg-4 mb-4">
+                            <div class="dark-card p-4 h-100">
+                                <div class="d-flex align-items-center mb-4">
+                                    <span class="fs-2 me-3">🎓</span>
+                                    <h3 class="mb-0 fw-bold">Formation</h3>
+                                </div>
+                                
+                                <div class="mb-4 border-start border-info border-3 ps-3">
+                                    <h5 class="fw-bold mb-1">
+                                        <a href="https://www.sorbonne-universite.fr/formation-sciences/offre-de-formation/licences/licence-carte/licences-gen-appr-l2-l3/parcours-dant" 
+                                        target="_blank" 
+                                        class="formation-link">
+                                            Licence Informatique en apprentissage
+                                        </a>
+                                    </h5>
+                                    <div class="text-info small mb-1">2025 - 2027</div>
+                                    <p class="mb-0 text-white-50">Sorbonne Université, Paris</p>
+                                    <p class="text-white-60 small mb-0">
+                                        Acquisition des fondamentaux en algorithmique, structures de données et architecture. Projets en C, Python et Web.
+                                    </p>
+                                </div>
+
+                                <div class="mb-4 border-start border-info border-3 ps-3">
+                                    <h5 class="fw-bold mb-1">
+                                        <a href="https://sciences.sorbonne-universite.fr/formation-sciences/offre-de-formation/licences/ma-licence-par-discipline/la-l1-classique-des-0-0" 
+                                        target="_blank" 
+                                        class="formation-link">
+                                            L1-Portail sciences formelles
+                                        </a>
+                                    </h5>
+                                    <div class="text-info small mb-1">2025 - 2027</div>
+                                    <p class="mb-0 text-white-50">Sorbonne Université, Paris</p>
+                                    <p class="text-white-60 small mb-0">
+                                        Initiation à la programmation (C, Python), logique informatique et bases mathématiques (raisonnement, calcul).
+                                    </p>
+                                </div>
+                                
+
+                                <div class="mb-0 border-start border-info border-3 ps-3">
+                                    <h5 class="fw-bold mb-1">Baccalauréat Série Mathematiques</h5>
+                                    <div class="text-info small mb-1">2024</div>
+                                    <p class="mb-0 text-white-60">Mention: Très Bien</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mx-auto col-md-8 col-lg-4 mb-4">
+                            <div class="dark-card p-4">
+                                <div class="d-flex align-items-center mb-4">
+                                    <span class="fs-2 me-3">💼</span> 
+                                    <h3 class="mb-0 fw-bold">Expérience</h3>
+                                </div>
+                                <div class="mb-4 border-start border-primary border-3 ps-3">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap">
+                                        <h5 class="fw-bold mb-1">Equipier Polyvalent</h5>
+                                        <span class="badge bg-primary">2025-present</span>
+                                    </div>
+                                    <p class="text-white-55 small mt-2 mb-0"><strong>Lidl</strong></p>
+                                    <ul class="mb-0 text-white-70">
+                                        <li>Mise en rayon, gestion des stocks et contrôle des dates.</li>
+                                        <li>Encaissement et accueil client.</li>
+                                        <li>Travail en équipe et gestion des périodes de forte affluence.</li>
+                                        <li>Développement du sens des responsabilités.</li>
+                                    </ul>
+                                </div>
+                                <div class="border-start border-primary border-3 ps-3">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap">
+                                        <h5 class="fw-bold mb-1"> Tuteur en mathématiques – Indépendant</h5>
+                                        <span class="badge bg-primary">2021-2024</span>
+                                    </div>
+                                    <ul class="mb-0 text-white-70">
+                                        <li>Aide aux devoirs et préparation aux examens pour collégiens et lycéens</li>
+                                        <li>Explications adaptées au niveau de chaque élève</li>
+                                        <li> Développement de la motivation et de la confiance en soi des élèves</li>
+                                    </ul>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <div class="col-12 mx-auto col-md-8 col-lg-4 mb-4">
+                            <div class="dark-card p-4 h-100">
+                                <div class="d-flex align-items-center mb-4">
+                                    <span class="fs-2 me-3">🌟</span>
+                                    <h3 class="mb-0 fw-bold">Centres d'intérêt</h3>
+                                </div>
+
+                                <ul class="list-unstyled">
+                                    <li class="mb-3 d-flex align-items-center">
+                                        <span class="text-primary me-2">➤</span>
+                                        <div>
+                                            <strong>Veille Technologique</strong>
+                                            <span class="d-block text-white-50 small">React, IA, Cyber-sécurité, DATA</span>
+                                        </div>
+                                    </li>
+                                    <li class="mb-3 d-flex align-items-center">
+                                        <span class="text-primary me-2">➤</span>
+                                        <div>
+                                            <strong>Jeux de Stratégie</strong>
+                                            <span class="d-block text-white-50 small">Échecs & Logique</span>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <span class="text-primary me-2">➤</span>
+                                        <div>
+                                            <strong>Sport</strong>
+                                            <span class="d-block text-white-50 small">Handball,Musculation</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="text-white bg-dark  pt-0 pb-5">
+                <div class="container">
+                    <h3 class="fw-bold text-center"> CONTACT</h3>
+                        <div class="row contact justify-content-center align-items-start gx-0 gx-sm-5 pt-3">
+                            <div class="col-12 col-sm-6 box mt-3">
+                                <p>Une question ? Une idée ? C'est par ici que ça se passe !<br>J'adore échanger et découvrir de nouvelles perspectives. N'hésitez pas à m'écrire pour :</p>
+                                <ul>
+                                    <li>Me poser une question pointue sur mon travail ou mes projets.</li>
+                                    <li>Me faire des propositions</li>
+                                    <li>Simplement partager votre avis sur ce que vous avez vu ici.</li>
+                                </ul>
+                                <p>Au plaisir de vous lire !</p>
+                                <div id="sic" class="d-flex  justify-content-center  gap-2 social-icons">
+                                    <a href="https://www.linkedin.com/in/abderrahim-meziane-2086a6335/" target="_blank">
+                                        <img src="images/linkedin.svg" alt="LinkedIn">
+                                    </a>
+                                    <a href="https://github.com/abderrahim-meziane" target="_blank">
+                                        <img src="images/github.svg" alt="GitHub">
+                                    </a>
+                                    <a href="mailto:abderrahim.meziane@etu.sorbonne-universite.fr">
+                                        <img src="images/mail.svg" alt="Email">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-10 col-sm-6 col-md-5 col-lg-4 mt-3">
+                                <p id="message_envoye" class="msg-ok d-none mt-4">Message envoyé avec succès</p>
+                                <form id="contact-form" method="POST">
+                                    <div class="mb-3">
+                                        <input id="nom" name="nom" class="form-control" type="text" placeholder="Nom">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <input id="email" name="email" class="form-control" type="text" placeholder="Email">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <textarea id="message" name="message" rows="6" class="form-control" placeholder="Ecrivez votre message"></textarea>
+                                    </div>
+
+                                    <p id="meserr" class="text-danger fw-bold text-center d-none"></p>
+
+                                    <div class="text-center">
+                                        <button id="sendmsg" type="submit" class="btn btn-light">Envoyer</button>
+                                    </div>
+                                </form>
+                        </div>
+                </div>
+            </section>
+            <footer class="site-footer text-white pt-0 py-4">
+                <div class="container py-3">
+                    <div class="row align-items-center text-center gy-4">
+                        <div class="col-12 col-sm-4 order-sm-2">
+                            <a href="#navigation" class="footer-link d-flex flex-column align-items-center text-decoration-none">
+                                <img
+                                src="https://cdn.prod.website-files.com/650c708f060576c9739bfba2/651c65b44a6971114710ee34_chevrons-left-arrows.svg"
+                                loading="lazy"
+                                alt="Revenir en haut"
+                                class="footer-icon">
+                                <span class="mt-2 text-white">Revenir en haut</span>
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-4 order-2 order-sm-1 mx-sm-auto">
+                            <a href="#navigation">
+                                <img src="images/logo.svg" alt="Logo" class="footer-logo-middle">
+                            </a>
+                        </div>
+
+
+                        <div class="col-12 col-sm-4 order-3">
+                            <div class="d-flex justify-content-center gap-2 social-icons">
+                                <a href="https://www.linkedin.com/in/abderrahim-meziane-2086a6335/" target="_blank">
+                                    <img src="images/linkedin.svg" alt="LinkedIn">
+                                </a>
+                                <a href="https://github.com/abderrahim-meziane" target="_blank">
+                                    <img src="images/github.svg" alt="GitHub">
+                                </a>
+                                <a href="mailto:abderrahim.meziane@etu.sorbonne-universite.fr">
+                                    <img src="images/mail.svg" alt="Email">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12 text-center small">
+                            © 2025 Abderrahim Meziane. Tous droits réservés.
+                        </div>
+                    </div>
+                    
+                </div>
+            </footer>
+            <button id="scrollTopBtn" aria-label="Retour en haut">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 19V5"></path>
+                    <path d="M5 12l7-7 7 7"></path>
+                </svg>
+            </button>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./scripts/scripts.js"></script>        
+    </body>
+</html>
