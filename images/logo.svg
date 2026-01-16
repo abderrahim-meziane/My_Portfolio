@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500">
+    <!-- Fond transparent -->
+    <rect width="100%" height="100%" fill="none"/>
+
+    <!-- Lettre A -->
+    <text x="155" y="160" font-family="Times New Roman" font-size="130" fill="white">A</text>
+
+    <!-- Barre oblique (diagonale inverse) -->
+    <line x1="295" y1="80" x2="190" y2="310" stroke="white" stroke-width="4"/>
+
+    <!-- Lettre M -->
+    <text x="230" y="310" font-family="Times New Roman" font-size="150" fill="white">M</text>
+
+    <!-- Nom -->
+    <text x="225" y="380" text-anchor="middle" font-family="Arial" font-size="35" letter-spacing="8" fill="white">
+        ABDERRAHIM
+    </text>
+
+    <text x="225" y="440" text-anchor="middle" font-family="Arial" font-size="35" letter-spacing="10" fill="white">
+        MEZIANE
+    </text>
+</svg>
