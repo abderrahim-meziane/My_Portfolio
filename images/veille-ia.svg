@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#16141f"/>
+  <g font-family="Consolas, monospace" font-size="15" fill="#3d3a52">
+    <text x="24" y="40">feed.rss  &gt; collect()</text><text x="400" y="70">GET /api/alerts 200</text>
+    <text x="40" y="320">INSERT OR IGNORE INTO alertes</text><text x="420" y="300">dedup: 12 doublons</text>
+  </g>
+  <g stroke="#7c6cf2" stroke-width="3" fill="none">
+    <path d="M140 180H250M390 180H500"/>
+    <path d="M240 172l10 8-10 8M490 172l10 8-10 8"/>
+  </g>
+  <g>
+    <rect x="70" y="140" width="70" height="80" rx="10" fill="#26233a" stroke="#ffa94d" stroke-width="3"/>
+    <path d="M88 200a24 24 0 0 1 24-24M88 186a38 38 0 0 1 38-38" stroke="#ffa94d" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="90" cy="202" r="5" fill="#ffa94d"/>
+  </g>
+  <g>
+    <circle cx="320" cy="180" r="70" fill="#26233a" stroke="#b197fc" stroke-width="3"/>
+    <g stroke="#b197fc" stroke-width="2"><path d="M290 160L320 140L350 160M290 160L320 180L350 160M290 200L320 180L350 200M290 200L320 220L350 200M290 160V200M350 160V200"/></g>
+    <g fill="#e5dbff"><circle cx="320" cy="140" r="6"/><circle cx="290" cy="160" r="6"/><circle cx="350" cy="160" r="6"/><circle cx="320" cy="180" r="7"/><circle cx="290" cy="200" r="6"/><circle cx="350" cy="200" r="6"/><circle cx="320" cy="220" r="6"/></g>
+    <text x="320" y="275" fill="#b197fc" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">Analyse IA</text>
+  </g>
+  <g>
+    <rect x="500" y="145" width="90" height="70" rx="8" fill="#26233a" stroke="#7fe0a8" stroke-width="3"/>
+    <path d="M500 150l45 35 45-35" fill="none" stroke="#7fe0a8" stroke-width="3"/>
+    <circle cx="585" cy="145" r="12" fill="#ff6b6b"/><text x="585" y="151" fill="#fff" font-family="Arial" font-size="15" font-weight="bold" text-anchor="middle">!</text>
+  </g>
+</svg>

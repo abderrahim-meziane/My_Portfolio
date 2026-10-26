@@ -3,7 +3,7 @@
 // ============================================================
 // --- VARIABLES POUR L'ANIMATION ---
 const messageH1 = "Bonjour, je suis\nAbderrahim\nMEZIANE";
-const messageP = "Etudiant en Licence d'informatique\nà Sorbonne Université.";
+const messageP = "Étudiant en L3 Informatique\nà Sorbonne Université";
 const elementH1 = document.getElementById("texteAnime");
 const elementP = document.getElementById("paragrapheAnime");
 const vitesse = 55; // Vitesse en ms
@@ -95,38 +95,51 @@ function machineAEcrireP() {
 }
 
 
+
 // ============================================================
-// PARTIE 2 : GESTION DU FORMULAIRE (FORMSPREE)
+// PARTIE 2 : GESTION DU FORMULAIRE (MON PROPRE SERVEUR NODE.JS)
 // ============================================================
+
+// Adresse du serveur de contact (dossier contact-api/ déployé sur Vercel).
+// Exemple : "https://mon-projet.vercel.app/api/contact"
+// Tant qu'elle est vide, le formulaire ouvre la messagerie du visiteur (mailto).
+const CONTACT_API_URL = "";
+const EMAIL_CONTACT = "rahimdest@gmail.com";
 
 const a = document.getElementById("message_envoye"); // Succès (Vert)
 const er = document.getElementById("meserr");        // Erreur (Rouge)
-const f = document.querySelector("form");            // Le formulaire
+const f = document.getElementById("contact-form");   // Le formulaire
+const btnEnvoyer = document.getElementById("sendmsg");
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;     // Validation Email
 
-const FORMSPREE_URL = "https://formspree.io/f/xeoydlpv"; 
+function afficherErreur(texte) {
+    er.innerText = texte;
+    er.classList.remove("d-none");
+}
 
-if (f) { 
-    f.addEventListener("submit", function(e) {// On déclenche cette fonction quand l'utilisateur clique sur "Envoyer"
-      
+function afficherSucces(texte) {
+    f.style.display = 'none'; // On cache le formulaire
+    a.textContent = texte;
+    a.classList.remove("d-none");
+}
+
+if (f) {
+    f.addEventListener("submit", async function(e) {// On déclenche cette fonction quand l'utilisateur clique sur "Envoyer"
+
       // 1. On empêche la page de se recharger
-      e.preventDefault(); 
+      e.preventDefault();
 
       // 2. Récupération des données
       let nom = document.getElementById("nom").value.trim();
       let email = document.getElementById("email").value.trim();
       let message = document.getElementById("message").value.trim();
+      let site = document.getElementById("site").value; // Champ piège anti-spam
 
       let manquants = [];
-      let emailInvalide = false; 
 
       // 3. Validation locale (Navigateur)
       if (nom === "") manquants.push("nom");
-      if (email === "") {
-          manquants.push("email");
-      } else if (!emailRegex.test(email)) {
-          emailInvalide = true;
-      }
+      if (email === "") manquants.push("email");
       if (message === "") manquants.push("message");
 
       // Reset des messages affichés
@@ -135,49 +148,48 @@ if (f) {
 
       // Gestion des erreurs de saisie
       if (manquants.length > 0) {
-        er.innerText = "⚠️ Veuillez remplir : " + manquants.join(", ");
-        er.classList.remove("d-none");
-      } else if (emailInvalide) {
-        er.innerText = "⚠️ Format d'email invalide (ex: nom@domaine.com)";
-        er.classList.remove("d-none");
+        afficherErreur("⚠️ Veuillez remplir : " + manquants.join(", "));
+        return;
+      }
+      if (!emailRegex.test(email)) {
+        afficherErreur("⚠️ Format d'email invalide (ex: nom@domaine.com)");
+        return;
+      }
 
-      } else {
-        // Création d'un objet FormData qui contient toutes les infos du formulaire
-        let formData = new FormData(f);
-        // Appel réseau (AJAX) vers Formspree
-        fetch(FORMSPREE_URL, {
-            method: "POST", // Méthode d'envoi
-            body: formData, // Les données
-            headers: {
-                'Accept': 'application/json' // On attend une réponse au format JSON
-            }
-        })
-        .then(response => {
-          //TRAITEMENT DE LA RÉPONSE DU SERVEUR
-            if (response.ok) {
-                // --- SUCCÈS ---
-                f.style.display = 'none'; // On cache le formulaire
-                a.textContent = "✅ Merci ! Votre message a bien été envoyé.";
-                a.classList.remove("d-none");
-            } else {
-                // --- ERREUR FORMSPREE ---
-                response.json().then(data => {
-                    if (Object.hasOwn(data, 'errors')) {
-                        er.innerText = "❌ " + data["errors"].map(error => error["message"]).join(", ");
-                    } else {
-                        er.innerText = "❌ Une erreur s'est produite lors de l'envoi.";
-                    }
-                    er.classList.remove("d-none");
-                });
-            }
-        })
-        .catch(error => {
-            // --- ERREUR RÉSEAU ---
-            console.error("Erreur Fetch:", error);
-            er.innerText = "❌ Impossible de contacter le serveur. Vérifiez votre connexion.";
-            er.classList.remove("d-none");
+      // 4. Pas encore de serveur configuré : on ouvre la messagerie du visiteur
+      if (CONTACT_API_URL === "") {
+        const sujet = encodeURIComponent("Message de " + nom + " via le portfolio");
+        const corps = encodeURIComponent(message + "\n\n" + nom + " (" + email + ")");
+        window.location.href = "mailto:" + EMAIL_CONTACT + "?subject=" + sujet + "&body=" + corps;
+        return;
+      }
+
+      // 5. Envoi au serveur Node.js
+      btnEnvoyer.disabled = true;
+      btnEnvoyer.textContent = "Envoi en cours…";
+
+      try {
+        const response = await fetch(CONTACT_API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nom, email, message, site })
         });
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok) {
+            // --- SUCCÈS ---
+            afficherSucces("✅ Merci ! Votre message a bien été envoyé.");
+        } else {
+            // --- ERREUR RENVOYÉE PAR LE SERVEUR ---
+            afficherErreur("❌ " + (data.error || "Une erreur s'est produite lors de l'envoi."));
+        }
+      } catch (error) {
+        // --- ERREUR RÉSEAU ---
+        console.error("Erreur Fetch:", error);
+        afficherErreur("❌ Impossible de contacter le serveur. Vous pouvez m'écrire à " + EMAIL_CONTACT);
+      } finally {
+        btnEnvoyer.disabled = false;
+        btnEnvoyer.textContent = "Envoyer";
       }
     });
 }
-

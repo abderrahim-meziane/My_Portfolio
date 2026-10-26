@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b6e99"/><stop offset="1" stop-color="#062a45"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#sea)"/>
+  <path d="M0 40q40-18 80 0t80 0 80 0 80 0 80 0 80 0 80 0 80 0V0H0z" fill="#3fb7e6" opacity="0.5"/>
+  <g fill="#f7a23b">
+    <path d="M150 140q40-30 80 0-40 30-80 0z"/><path d="M150 140l-22-16v32z"/>
+  </g>
+  <circle cx="215" cy="136" r="4" fill="#062a45"/>
+  <g fill="#ffd166">
+    <path d="M400 210q30-22 60 0-30 22-60 0z"/><path d="M400 210l-16-12v24z"/>
+    <path d="M470 160q24-18 48 0-24 18-48 0z"/><path d="M470 160l-13-10v20z"/>
+  </g>
+  <g fill="#8fa9b8">
+    <path d="M250 250q70-45 150 0-80 40-150 0z"/><path d="M250 250l-35-26v52z"/><path d="M320 226l10-26 18 28z"/>
+  </g>
+  <g fill="none" stroke="#2ec4b6" stroke-width="6" stroke-linecap="round">
+    <path d="M60 360q-10-50 10-90t0-80"/><path d="M95 360q10-40-5-75"/><path d="M580 360q-15-45 5-85t-5-60"/>
+  </g>
+  <path d="M0 340q160-25 320 0t320 0V360H0z" fill="#c9b37e" opacity="0.7"/>
+  <g fill="#bfefff" opacity="0.7"><circle cx="232" cy="110" r="5"/><circle cx="240" cy="92" r="3"/><circle cx="530" cy="130" r="4"/></g>
+  <g font-family="Consolas, monospace" font-size="15" fill="#bfefff" opacity="0.85">
+    <text x="440" y="300">Ecosysteme.java</text>
+  </g>
+</svg>

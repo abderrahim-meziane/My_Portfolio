@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#0f1b2d"/>
+  <g stroke="#1e3a5f" stroke-width="1">
+    <path d="M0 60H640M0 120H640M0 180H640M0 240H640M0 300H640M80 0V360M160 0V360M240 0V360M320 0V360M400 0V360M480 0V360M560 0V360"/>
+  </g>
+  <g fill="none" stroke="#3fa9f5" stroke-width="2" opacity="0.6">
+    <circle cx="320" cy="180" r="70"/>
+    <circle cx="320" cy="180" r="120"/>
+    <circle cx="320" cy="180" r="170" opacity="0.5"/>
+  </g>
+  <path d="M320 180L440 95A150 150 0 0 1 470 180Z" fill="#3fa9f5" opacity="0.18"/>
+  <path d="M320 110l55 22v42c0 38-24 62-55 76-31-14-55-38-55-76v-42z" fill="#15314f" stroke="#68c4ff" stroke-width="4"/>
+  <path d="M297 180l16 16 32-34" fill="none" stroke="#7fe0a8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#ffcd00">
+    <circle cx="430" cy="110" r="6"/><circle cx="205" cy="250" r="5"/><circle cx="470" cy="245" r="5"/>
+  </g>
+  <text x="320" y="330" fill="#68c4ff" font-family="Consolas, monospace" font-size="22" text-anchor="middle">node veille.js --source CERT-FR</text>
+</svg>
