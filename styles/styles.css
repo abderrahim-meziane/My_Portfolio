@@ -470,8 +470,3 @@ footer .social-icons a {
     height: 1px;
     overflow: hidden;
 }
-
-#contact #sendmsg:disabled {
-    opacity: 0.7;
-    cursor: wait;
-}
